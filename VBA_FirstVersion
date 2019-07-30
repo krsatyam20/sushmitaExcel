@@ -1,0 +1,237 @@
+Introduction :
+	VBA stands for Visual Basic for Applications an event-driven programming language from Microsoft that is now predominantly 
+used with Microsoft office applications such as MSExcel, MS-Word, and MS-Access.
+
+
+Tools
+	=>you should install MS Office, particularly MS-Excel.
+
+
+
+Why Use VBA.
+
+	=>MS-Excel provides only basic inbuilt functions which might not be sufficient to perform complex calculations.
+
+
+
+Accessing VBA Editor
+
+	First Option:
+
+	=>ALT+F11
+
+	Second Option :
+
+		Step 1 − First, enable 'Developer' menu in Excel 20XX. To do the same, click File → Options.
+
+		Step 2 − Click ‘Customize the Ribbon’ tab and check 'Developer'. Click 'OK'.
+	
+
+Modules:
+	 Modules is the area where the code is written.	
+	 To insert a Module, navigate to Insert → Module
+	 
+		Within the modules, we can write VBA code and the code is written within a Procedure. A Procedure/Sub Procedure is a 
+	series of VBA statements instructing what to do.
+
+
+
+Procedure
+	Procedures are a group of statements executed as a whole.
+	the programmers to divide a big program into a number of small and manageable functions.
+
+
+
+Comment:
+	Comments are used to document the program logic and the user information.
+
+	Comments in VBA are denoted by two methods.
+		=>Single Quote (')
+			Ex:' This Script is invoked after successful login '
+		=>starts with the keyword "REM"
+			Ex: REM This is my first Progrma.
+		
+		
+
+Displays a message:
+
+		Using MsgBox() displays a message.
+		Syntax:
+           MsgBox(prompt[,buttons][,title][,helpfile,context])
+		   
+		Description:
+			=>Prompt − A Required Parameter. A String that is displayed as a message in the dialog box. The maximum length of prompt is approximately 1024 characters.
+			
+			=>Buttons − An Optional Parameter. A Numeric expression.If left blank, the default value for buttons is 0.
+			
+			=>Title − An Optional Parameter. A String expression displayed in the title bar of the dialog box. If the title is left blank, the application name is placed in the title bar.
+			
+			=>Helpfile − An Optional Parameter. A String expression that identifies the Help file to use for providing context-sensitive help for the dialog box.
+
+			=>Context − An Optional Parameter. A Numeric expression that identifies the Help context number assigned by the Help author to the appropriate Help topic
+		   
+
+Buttons parameter:
+
+		The first group (0 to 5) indicates the buttons to be displayed in the message box.
+		=>	0 vbOKOnly - Displays OK button only.
+
+		=>	1 vbOKCancel - Displays OK and Cancel buttons.
+
+		=>	2 vbAbortRetryIgnore - Displays Abort, Retry, and Ignore buttons.
+
+		=>	3 vbYesNoCancel - Displays Yes, No, and Cancel buttons.
+
+		=>	4 vbYesNo - Displays Yes and No buttons.
+
+		=>	5 vbRetryCancel - Displays Retry and Cancel buttons.
+	
+		The second group (16, 32, 48, 64) describes the style of the icon to be displayed
+		=>	16 vbCritical - Displays Critical Message icon.
+
+		=>	32 vbQuestion - Displays Warning Query icon.
+
+		=>	48 vbExclamation - Displays Warning Message icon.
+
+		=>	64 vbInformation - Displays Information Message icon.
+
+	   The third group (0, 256, 512, 768) indicates which button must be the default,
+		=>	0 vbDefaultButton1 - First button is default.
+
+		=>	256 vbDefaultButton2 - Second button is default.
+
+		=>	512 vbDefaultButton3 - Third button is default.
+
+		=>	768 vbDefaultButton4 - Fourth button is default.
+
+
+		Ex:
+			'Message Box with title, yes no and cancel Butttons'
+			
+             a = MsgBox("Do you like blue color?",3,"Choose options") 
+  
+            msgbox ("The Value of a is " & a) 
+
+    ****Note : When if you click any button then the msgbox return one of the following values.****
+		
+		=>1 - vbOK - OK was clicked
+
+		=>2 - vbCancel - Cancel was clicked
+
+		=>3 - vbAbort - Abort was clicked
+
+		=>4 - vbRetry - Retry was clicked
+
+		=>5 - vbIgnore - Ignore was clicked
+
+		=>6 - vbYes - Yes was clicked
+
+		=>7 - vbNo - No was clicked
+
+
+
+Variable:Variable is a named memory location used to hold a value.
+	
+	===>basic rules for naming a variable.
+
+		=>You must use a letter as the first character.
+
+		=>You can't use a space, period (.), exclamation mark (!), or the characters @, &, $, # in the name.
+
+		=>Name can't exceed 255 characters in length.
+
+		=>You cannot use Visual Basic reserved keywords as variable name.
+
+	Syntax
+		you need to declare the variables before using them.
+		Using "Dim" Keyword 
+			Dim <<variable_name>> As <<variable_type>>
+
+Data Types/variable type
+	
+	In VBA data types divided into two main categories, namely numeric and non-numeric data types.
+
+	=========Numeric Data Types=================
+		
+		Type					Range of Values
+		
+		Byte					0 to 255
+		
+		Integer					-32,768 to 32,767
+		
+		Long					-2,147,483,648 to 2,147,483,648
+		
+		Single					-3.402823E+38 to -1.401298E-45 for negative values
+
+								1.401298E-45 to 3.402823E+38 for positive values.
+
+
+		Double					-1.79769313486232e+308 to -4.94065645841247E-324 for negative values
+
+								4.94065645841247E-324 to 1.79769313486232e+308 for positive values.
+
+		Currency				-922,337,203,685,477.5808 to 922,337,203,685,477.5807
+
+		Decimal					+/- 79,228,162,514,264,337,593,543,950,335 if no decimal is use
+
+								+/- 7.9228162514264337593543950335 (28 decimal places).
+		
+	
+		=========Non-Numeric Data Types===============
+		
+		Type							Range of Values
+
+		String (fixed length)			1 to 65,400 characters
+		
+		String (variable length)		0 to 2 billion characters
+		
+		Date							January 1, 100 to December 31, 9999
+
+		Boolean							True or False
+
+		Object							Any embedded object
+
+		Variant (numeric)				Any value as large as double
+
+		Variant (text)					Same as variable-length string
+
+
+	Example
+			Dim password As String
+			password = "Admin#1"
+
+			Dim num As Integer
+			num = 1234
+
+			Dim BirthDay As Date
+			BirthDay = DateValue("30 / 10 / 2020")
+
+			MsgBox "Passowrd is " & password & Chr(10) & "Value of num is " & num & Chr(10) & "Value of Birthday is " & BirthDay
+
+    Note: Here  synbole (&) use for String concantet 
+
+Take Input From User:
+		
+				Using InputBox function :After entering the values, if the user clicks the OK button or presses ENTER on the 
+	keyboard, the InputBox function will return the text in the text box. If the user clicks the Cancel button, the function will return an empty string ("").
+
+
+	Syntax:
+		InputBox(prompt[,title][,default][,xpos][,ypos][,helpfile,context])
+
+		Example:
+			Function sumval() 
+			   Dim a As Integer 
+			   Dim b As Integer 
+			   
+			   a = InputBox("Enter value of a ", "Enter a Number") 
+			   b = InputBox("Enter value of b", "Enter a Number") 
+			   sumval = a * b 
+			End Function
+
+
+
+
+
+
+

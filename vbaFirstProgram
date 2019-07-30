@@ -1,0 +1,41 @@
+Function msg()
+
+'Declear a variable
+
+Dim x As Integer
+
+'comment here
+'comment is ignore by compiler
+'comment use for developer understod
+
+'Print any things
+x = MsgBox("Hello My first Program in VBA", 5)
+MsgBox (x)
+
+End Function
+
+
+Function add()
+
+Dim a As Integer
+Dim b As Integer
+Dim c As Integer
+
+a = 20
+b = 30
+c = a + b
+'for cancatination use &
+
+MsgBox ("add value of a and b = " & c)
+
+
+End Function
+
+
+Function addbyuser(a As Integer, b As Integer)
+
+Dim c As Integer
+c = a + b
+addbyuser = c 'here we are returning value
+
+End Function
